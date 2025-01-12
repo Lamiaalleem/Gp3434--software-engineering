@@ -3,51 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click the Square Game</title>
+    <title>Sample Table</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
+        table {
+            width: 100%;
+            border-collapse: collapse;
         }
-        #score {
-            font-size: 24px;
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
         }
-        .square {
-            width: 50px;
-            height: 50px;
-            background-color: red;
-            position: relative;
-            cursor: pointer;
+        th {
+            background-color: #f2f2f2;
         }
     </style>
 </head>
 <body>
-    <div id="score">Score: 0</div>
-    <div class="square" id="square"></div>
 
-    <script>
-        let score = 0;
-        const square = document.getElementById('square');
-        const scoreDisplay = document.getElementById('score');
+    <h1>Sample Table Heading</h1>
 
-        function moveSquare() {
-            const x = Math.random() * (window.innerWidth - 50);
-            const y = Math.random() * (window.innerHeight - 50);
-            square.style.transform = `translate(${x}px, ${y}px)`;
-        }
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>New York</td>
+        </tr>
+        <tr>
+            <td>Jane Smith</td>
+            <td>25</td>
+            <td>Los Angeles</td>
+        </tr>
+        <tr>
+            <td>Sam Johnson</td>
+            <td>40</td>
+            <td>Chicago</td>
+        </tr>
+    </table>
 
-        square.addEventListener('click', () => {
-            score++;
-            scoreDisplay.textContent = `Score: ${score}`;
-            moveSquare();
-        });
-
-        moveSquare(); // Initial position
-    </script>
 </body>
 </html>
