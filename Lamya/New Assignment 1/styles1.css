@@ -98,4 +98,10 @@ footer{
 }
 #Software{
     background-color: antiquewhite;
+    z-index: 1000px;
+}
+
+#Floating{
+    margin-top: -30px;
+    z-index: -20px;
 }
