@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css"> <!-- Optional: Link to an external CSS file -->
+</head>
+<body>
+    <h1>My To-Do List</h1>
+
+    <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Add a new task...">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <ul id="taskList">
+        <!-- Tasks will be added here dynamically using JavaScript -->
+    </ul>
+
+    <script src="script.js"></script> <!-- Link to your external JavaScript file -->
+
+    <script>
+        // Internal JavaScript (optional - you can put all your JS in script.js)
+        function addTask() {
+            var inputElement = document.getElementById("taskInput");
+            var taskText = inputElement.value;
+
+            if (taskText.trim() !== "") {
+                var listItem = document.createElement("li");
+                listItem.textContent = taskText;
+
+                // Add a delete button
+                var deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.onclick = function() {
+                    listItem.remove();
+                };
+                listItem.appendChild(deleteButton);
+
+                document.getElementById("taskList").appendChild(listItem);
+                inputElement.value = ""; // Clear the input
+            }
+        }
+    </script>
+</body>
+</html>
