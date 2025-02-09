@@ -1,82 +1,133 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #fafafa;
-
+    box-sizing: border-box;
 }
 
-header{
-    background: #35424a;
-    color: #ffffff;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fafafa;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #35424a;
+    color: white;
+    text-align: center;
     padding: 20px 0;
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
     text-align: center;
 }
 
-nav ul{
-    list-style: none;
-    padding: 0;
-
+nav ul li {
+    display: inline;
+    margin: 0 15px;
 }
 
-nav ul li{
-    color: #ffffff;
+nav ul li a {
+    color: white;
     text-decoration: none;
+    font-size: 1.1rem;
 }
 
-h1, h2 {
-    margin: 0;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-main{
+/* Main content styles */
+main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-section{
-    margin-bottom: 20px;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgb(5, 3, 3);
+section {
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+h2 {
+    color: #35424a;
+    margin-bottom: 15px;
+}
+
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-table, th, td {
-    border: 1px solid #dddddd;
+table th,
+table td {
+    padding: 12px;
     text-align: left;
-    padding: 8px;
+    border: 1px solid #ddd;
 }
 
-th{
+table th {
     background-color: #35424a;
     color: white;
 }
 
-form{
+table td {
+    background-color: #f9f9f9;
+}
+
+/* Skills Section */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    background-color: #f1f1f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Form Styling */
+form {
     display: flex;
     flex-direction: column;
 }
 
-label{
+form label {
     margin-top: 10px;
+    font-weight: bold;
 }
 
-input, textarea {
-    margin-top: 10px;
+form input,
+form textarea {
+    margin-top: 8px;
     padding: 10px;
-    background-color: #35425a;
-    color: white;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    cursor: pointer;
+    font-size: 1rem;
 }
-button{
-    margin-top: 10px;
-    padding: 10px;
+
+form button {
+    margin-top: 15px;
+    padding: 12px;
     background-color: #35424a;
     color: white;
     border: none;
@@ -84,22 +135,65 @@ button{
     cursor: pointer;
 }
 
-button:hover {
+form button:hover {
     background-color: #2c3e50;
-
 }
 
-footer{
+/* Software Section */
+#Software, #Floating {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#Software ul, #Floating ul {
+    list-style-type: none;
+}
+
+#Software li, #Floating li {
+    margin: 10px 0;
+}
+
+/* Footer Styling */
+footer {
     text-align: center;
-    padding: 10px 0;
-    background: #35425a;
-    color: #ffffff;
-
+    padding: 15px 0;
+    background-color: #35424a;
+    color: white;
+    margin-top: 30px;
 }
-#Software{
-    background-color: antiquewhite;
+
+/* Floating Section */
+#Floating {
     margin: 30px;
     padding: 300px;
-    
+    z-index: 1000;
+    margin-top: -30px;
+}
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    form input,
+    form textarea,
+    form button {
+        font-size: 0.9rem;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+    }
 }
